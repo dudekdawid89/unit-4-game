@@ -31,16 +31,20 @@ var counter = 0;
   }
   function startGame(){
     targetNumber = Math.floor(Math.random()*101)+19;
+
     numberOptions = [
       Math.floor(Math.random()*11)+1, 
       Math.floor(Math.random()*11)+1,
       Math.floor(Math.random()*11)+1, 
       Math.floor(Math.random()*11)+1
     ];
+
     $("#number-to-guess").text(targetNumber);
     counter = 0;
     $('#counter').text('0');
-
+    for (var i = 0; i < numberOptions.length; i++){ 
+    $(".crystal-image").attr("data-crystalvalue", numberOptions[i]);
+    }
   }
   $(".crystal-image").on("click", function() {
 
