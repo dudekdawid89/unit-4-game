@@ -17,9 +17,9 @@ var counter = 0;
 
   var imageArray = [
     "./assets/images/diament1.png",
-    "./assets/images/diament1.png",
-    "./assets/images/diament1.png",
-    "./assets/images/diament1.png"
+    "./assets/images/diament2.png",
+    "./assets/images/diament3.png",
+    "./assets/images/diament4.png"
   ];
   for (var i = 0; i < numberOptions.length; i++) {
     
@@ -43,7 +43,7 @@ var counter = 0;
     counter = 0;
     $('#counter').text('0');
     for (var i = 0; i < numberOptions.length; i++){ 
-    $(".crystal-image").attr("data-crystalvalue", numberOptions[i]);
+    $("#image"+i).attr("data-crystalvalue", numberOptions[i]);
     }
   }
   $(".crystal-image").on("click", function() {
@@ -58,21 +58,23 @@ var counter = 0;
 
     if (counter === targetNumber) {
       winCounter++;
-      alert("WIN")
+      alert("WINNER")
       $('#win').text(winCounter);
       startGame();
     }
 
     else if (counter >= targetNumber) {
       lossCounter++;
-      alert("LOSS")
+      alert("I'm sorry you lost")
       $('#loss').text(lossCounter);
       startGame();
     }
 
   });
 
-
+  function welcome(){
+    alert("IS NICE TO SEE YOU, Click OK to start the game ")
+  };
 
 
 
