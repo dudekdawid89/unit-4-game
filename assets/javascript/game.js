@@ -26,6 +26,7 @@ var counter = 0;
     var imageCrystal = $("<img>");
     imageCrystal.addClass("crystal-image");
     imageCrystal.attr("src", imageArray[i]);
+    imageCrystal.attr("id", "image"+i);
     imageCrystal.attr("data-crystalvalue", numberOptions[i]);
     $("#crystals").append(imageCrystal);
   }
@@ -43,6 +44,7 @@ var counter = 0;
     counter = 0;
     $('#counter').text('0');
     for (var i = 0; i < numberOptions.length; i++){ 
+ //here is where you reference the dynamic class called crystal-image to store the random numbers
     $("#image"+i).attr("data-crystalvalue", numberOptions[i]);
     }
   }
@@ -75,6 +77,7 @@ var counter = 0;
   function welcome(){
     alert("IS NICE TO SEE YOU, Click OK to start the game ")
   };
+
 
 
 
